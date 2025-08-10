@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCRAM CA — NorCal Region Hub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="SCRAM of California" class="logo">
+      <div class="titles">
+        <h1>NorCal Region Hub</h1>
+        <div class="sub">Info, links, and tools for Northern California staff</div>
+      </div>
+    </div>
+    <div class="searchbox">
+      <input id="globalSearch" type="search" placeholder="Search offices, contacts, SOPs, forms…" aria-label="Search">
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab active" data-tab="home" role="tab" aria-selected="true">Home</button>
+    <button class="tab" data-tab="offices" role="tab">Offices</button>
+    <button class="tab" data-tab="contacts" role="tab">Contacts</button>
+    <button class="tab" data-tab="scheduling" role="tab">Scheduling</button>
+    <button class="tab" data-tab="sops" role="tab">SOPs</button>
+    <button class="tab" data-tab="forms" role="tab">Forms</button>
+    <button class="tab" data-tab="coverage" role="tab">Coverage</button>
+    <button class="tab" data-tab="training" role="tab">Training</button>
+    <button class="tab" data-tab="faqs" role="tab">FAQs</button>
+  </nav>
+
+  <main class="wrap">
+    <section id="home" class="panel active" tabindex="0">
+      <div id="announcement" class="announcement hidden"></div>
+      <div class="grid-2">
+        <div class="card">
+          <h2>Quick Links</h2>
+          <div id="quickLinks" class="list"></div>
+        </div>
+        <div class="card">
+          <h2>Today</h2>
+          <ul class="bullets">
+            <li><strong>Coverage:</strong> see the <a href="#" data-link="coverage">Coverage</a> tab.</li>
+            <li><strong>Scheduling:</strong> use office Calendly links under <a href="#" data-link="scheduling">Scheduling</a>.</li>
+            <li><strong>Need help?</strong> Ping your PM/Regional via <a href="#" data-link="contacts">Contacts</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="offices" class="panel" tabindex="0">
+      <h2>Offices</h2>
+      <div id="officesList" class="cards"></div>
+    </section>
+
+    <section id="contacts" class="panel" tabindex="0">
+      <h2>Contacts</h2>
+      <div id="contactsList" class="cards"></div>
+    </section>
+
+    <section id="scheduling" class="panel" tabindex="0">
+      <h2>Scheduling</h2>
+      <div id="schedulingList" class="cards"></div>
+    </section>
+
+    <section id="sops" class="panel" tabindex="0">
+      <h2>Standard Operating Procedures</h2>
+      <div id="sopsList" class="list"></div>
+    </section>
+
+    <section id="forms" class="panel" tabindex="0">
+      <h2>Forms</h2>
+      <div id="formsList" class="list"></div>
+    </section>
+
+    <section id="coverage" class="panel" tabindex="0">
+      <h2>Coverage & On‑Call</h2>
+      <div class="card">
+        <h3>This Week</h3>
+        <div id="coverageNow" class="list"></div>
+      </div>
+      <div class="card">
+        <h3>Region Calendar</h3>
+        <div class="calendarWrap">
+          <iframe id="calendarFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Region Calendar"></iframe>
+        </div>
+        <small class="muted">Replace the calendar embed URL in <code>config.js</code>.</small>
+      </div>
+    </section>
+
+    <section id="training" class="panel" tabindex="0">
+      <h2>Training</h2>
+      <div id="trainingList" class="list"></div>
+    </section>
+
+    <section id="faqs" class="panel" tabindex="0">
+      <h2>FAQs</h2>
+      <div id="faqsList" class="faq"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>&copy; <span id="year"></span> SCRAM of California — Northern California Region</span>
+    <span class="sep">•</span>
+    <a id="contactEmail" href="#">sanmateooffice@scramca.com</a>
+  </footer>
+</body>
+</html>
